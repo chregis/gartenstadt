@@ -1,0 +1,5 @@
+
+Dynamic Routing:
+----------------
+https://levelup.gitconnected.com/angular-dynamic-routing-299c04ca75b1
+https://material.angular.io/cdk/portal/overview
