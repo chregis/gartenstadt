@@ -1,6 +1,8 @@
 <div class="main-content">
   <div class="header">
-    <img src="/assets/Wagen_mit_Text.png" alt="fahrende Bühne">
+    <a routerLink="home">
+      <img src="/assets/Wagen_mit_Text.png" alt="fahrende Bühne">
+    </a>
   </div>
 
   <div class="toolbar">
@@ -14,7 +16,7 @@
         </button>
         <div class="main-menu-list">
           <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-          <a href="#" mat-button>Menu Item 1</a>
+          <a routerLink="anmeldung" mat-button>Anmeldung</a>
           <a href="#" mat-button>Menu Item 2</a>
           <a href="#" mat-button>Menu Item 3</a>
           <a href="#" mat-button>Menu Item 4</a>
@@ -34,33 +36,8 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="router-wrapper">
-        <div class="content">
-          --TEXT-START--<br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj overvlow overflow overflow-END<br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          <br><br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          <br><br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          <br><br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          Main content sldkjfskld lsdjflksd lfkjsdlfksdlkfsdlkfj <br>
-          --TEXT-END--
-        </div>
+        <router-outlet class="content"></router-outlet>
       </div>
-
-
-
     </mat-sidenav-content>
-    <router-outlet></router-outlet>
   </mat-sidenav-container>
 </div>
