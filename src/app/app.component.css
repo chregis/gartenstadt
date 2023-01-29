@@ -14,8 +14,6 @@
   width: 100%;
   max-width: 600px;
   position: relative;
-  left: 3.4%;
-
 }
 
 
@@ -23,7 +21,7 @@
 .toolbar {
   flex: 0 1 50px;
   font-size: 20px;
-  position: sticky;
+  position: sticky; /* Info: https://clubmate.fi/position-sticky-in-css */
   top: 0;
 }
 
@@ -61,8 +59,7 @@
 }
 
 .sidenav-menu {
-  background-color: white;
-  width: 200px;
+  background-color: lightgray;
 }
 
 .router-wrapper {
