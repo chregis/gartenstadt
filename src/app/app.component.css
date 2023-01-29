@@ -1,0 +1,65 @@
+.main-content {
+  /*height: 100%;*/
+  display: flex;
+  /*flex-flow: row;*/
+  flex-flow: column;
+}
+
+/* 1. HEADER */
+.header {
+  flex: 0 1 100px;
+  overflow: visible;
+  text-align: center;
+}
+
+.header img {
+  height: 250px;
+}
+
+/* 2. TOOLBAR */
+.toolbar {
+  flex: 0 1 50px;
+  font-size: 20px;
+  background-color: blue;
+  position: sticky;
+  top: 0;
+}
+
+.main-menu-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-menu-list {
+  flex: 1 0;
+  text-align: center;
+}
+
+.main-menu a {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* 3. PAGE */
+.page-content {
+  flex: 1 0;
+}
+
+.sidenav {
+  background-color: white;
+  width: 200px;
+}
+
+.router-wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.content {
+  flex: 1 0;
+  max-width: 500px;
+}
+
