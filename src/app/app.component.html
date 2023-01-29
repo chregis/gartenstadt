@@ -7,31 +7,24 @@
 
   <div class="toolbar">
     <mat-toolbar color="primary">
-      <mat-toolbar-row class="main-menu-row">
-        <button
-          class="sidenav-toggle-button"
-          mat-icon-button
-          (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <div class="main-menu-list">
-          <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-          <a routerLink="anmeldung" mat-button>Anmeldung</a>
-          <a href="#" mat-button>Menu Item 2</a>
-          <a href="#" mat-button>Menu Item 3</a>
-          <a href="#" mat-button>Menu Item 4</a>
-        </div>
-      </mat-toolbar-row>
+      <button
+        class="sidenav-toggle-button"
+        mat-icon-button
+        (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="horizontal-spacer"></span>
+      <mat-nav-list class="main-menu-list">
+        <app-main-menu class="horizontal"></app-main-menu>
+      </mat-nav-list>
+      <span class="horizontal-spacer"></span>
     </mat-toolbar>
   </div>
 
   <mat-sidenav-container class="page-content">
     <mat-sidenav #sidenav class="sidenav-menu">
-      <mat-nav-list class="sidenav-menu-list">
-        <a href="#" mat-list-item>Menu Item 1</a>
-        <a href="#" mat-list-item>Menu Item 2</a>
-        <a href="#" mat-list-item>Menu Item 3</a>
-        <a href="#" mat-list-item>Menu Item 4</a>
+      <mat-nav-list>
+        <app-main-menu class="vertical"></app-main-menu>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

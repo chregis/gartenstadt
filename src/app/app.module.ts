@@ -11,12 +11,14 @@ import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
 import { AnmeldungComponent } from './pages/anmeldung/anmeldung.component';
 import { HomeComponent } from './pages/home/home.component';
+import { MainMenuComponent } from './menus/main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnmeldungComponent,
-    HomeComponent
+    HomeComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,

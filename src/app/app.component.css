@@ -25,16 +25,19 @@
   top: 0;
 }
 
-.main-menu-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 @media (min-width: 600px){
   .sidenav-toggle-button {
     display: none;
   }
+}
+
+.horizontal {
+  display: flex;
+  max-width: 600px;
+  flex-flow: row;
+}
+.horizontal-spacer {
+  flex: 1 0;
 }
 
 .main-menu-list {
@@ -73,3 +76,4 @@
   flex: 1 0;
   max-width: 500px;
 }
+
