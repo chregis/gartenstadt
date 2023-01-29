@@ -33,9 +33,21 @@
   align-items: center;
 }
 
+@media (min-width: 600px){
+  .sidenav-toggle-button {
+    display: none;
+  }
+}
+
 .main-menu-list {
   flex: 1 0;
   text-align: center;
+}
+
+@media (max-width: 599px){
+  .main-menu-list {
+    display: none;
+  }
 }
 
 .main-menu a {
@@ -48,7 +60,7 @@
   flex: 1 0;
 }
 
-.sidenav {
+.sidenav-menu {
   background-color: white;
   width: 200px;
 }
