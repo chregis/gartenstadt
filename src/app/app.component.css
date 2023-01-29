@@ -1,7 +1,5 @@
 .main-content {
-  /*height: 100%;*/
   display: flex;
-  /*flex-flow: row;*/
   flex-flow: column;
 }
 
@@ -10,17 +8,22 @@
   flex: 0 1 100px;
   overflow: visible;
   text-align: center;
+  max-height: 100px;
 }
 
 .header img {
-  height: 250px;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  left: 3.4%;
+
 }
+
 
 /* 2. TOOLBAR */
 .toolbar {
   flex: 0 1 50px;
   font-size: 20px;
-  background-color: blue;
   position: sticky;
   top: 0;
 }
@@ -44,6 +47,7 @@
 /* 3. PAGE */
 .page-content {
   flex: 1 0;
+  top: 100px;
 }
 
 .sidenav {
@@ -62,4 +66,3 @@
   flex: 1 0;
   max-width: 500px;
 }
-
