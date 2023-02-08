@@ -23,6 +23,7 @@
   font-size: 20px;
   position: sticky; /* Info: https://clubmate.fi/position-sticky-in-css */
   top: 0;
+  z-index: 1;
 }
 
 @media (min-width: 600px){
@@ -51,18 +52,10 @@
   }
 }
 
-.main-menu a {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
 /* 3. PAGE */
 .page-content {
   flex: 1 0;
-}
-
-.sidenav-menu {
-  background-color: lightgray;
+  z-index: 0;
 }
 
 .router-wrapper {
@@ -72,8 +65,5 @@
   align-items: center;
 }
 
-.content {
-  flex: 1 0;
-  max-width: 500px;
-}
+
 

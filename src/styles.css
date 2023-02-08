@@ -12,3 +12,46 @@ body {
 
 html, body { height: 100%; }
 
+
+.content {
+  max-width: 600px;
+  padding: 20px;
+  background-color: #eeeeee;
+  position: relative;
+}
+
+app-main-menu  {
+  background-color: #dddddd;
+}
+
+.sidenav-menu {
+  background-color: lightgray;
+}
+
+a {
+  color: #9F2A32!important;
+}
+
+a:visited {
+  color: #9F2A32!important;
+}
+
+a:hover {
+  color: #dddddd!important;
+  background-color: #9F2A32!important;
+}
+
+a.link-active {
+  color: #dddddd!important;
+  background-color: #9F2A32!important;
+}
+
+
+
+.bg-home {
+  background-image: url("assets/img/bg_home.jpg");
+  background-position: right;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
