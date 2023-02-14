@@ -1,0 +1,6 @@
+<mat-nav-list class="{{direction}}">
+  <a mat-list-item
+     *ngFor="let menuItem of menuItems"
+     [routerLink]="menuItem.routerLink"
+     routerLinkActive="link-active"></a>
+</mat-nav-list>
