@@ -5,20 +5,19 @@
     </a>
   </div>
 
-  <div class="toolbar">
-    <mat-toolbar color="primary">
-      <button
-        class="sidenav-toggle-button"
-        mat-icon-button
-        (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span class="horizontal-spacer"></span>
-      <mat-nav-list class="main-menu-list">
-        <app-main-menu class="horizontal"></app-main-menu>
-      </mat-nav-list>
-      <span class="horizontal-spacer"></span>
-    </mat-toolbar>
+  <div class="sticky">
+    <button
+      class="sidenav-toggle-button"
+      mat-icon-button
+      (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="horizontal-spacer"></span>
+    <mat-nav-list class="main-menu-list">
+      <app-main-menu class="horizontal"></app-main-menu>
+    </mat-nav-list>
+<!--      <app-menu [menuItems]="mainMenu" class="main-menu-list"></app-menu>-->
+    <span class="horizontal-spacer"></span>
   </div>
 
   <mat-sidenav-container class="page-content">

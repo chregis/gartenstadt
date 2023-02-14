@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnmeldungComponent implements OnInit {
 
+  // Anchor Scrolling!
+  // https://stackoverflow.com/questions/44441089/angular4-scrolling-to-anchor
+
   constructor() { }
 
   ngOnInit(): void {

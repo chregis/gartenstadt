@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MenuItem} from "./shared/menu/menu.component";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gartenstadt';
+
+  mainMenu: MenuItem[] = [
+    { name: 'das Musikfest', routerLink: 'home'},
+    { name: 'Mitmachen', routerLink: 'anmeldung'},
+    { name: 'Fotos', routerLink: 'fotos'},
+  ]
 }

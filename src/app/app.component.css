@@ -17,8 +17,8 @@
 }
 
 
-/* 2. TOOLBAR */
-.toolbar {
+/* 2. MENU */
+.sticky {
   flex: 0 1 50px;
   font-size: 20px;
   position: sticky; /* Info: https://clubmate.fi/position-sticky-in-css */
@@ -26,15 +26,16 @@
   z-index: 1;
 }
 
-@media (min-width: 600px){
+@media (min-width: 640px){
   .sidenav-toggle-button {
     display: none;
   }
 }
 
+/* 2.1 */
 .horizontal {
   display: flex;
-  max-width: 600px;
+  min-width: 640px;
   flex-flow: row;
 }
 .horizontal-spacer {
@@ -42,11 +43,13 @@
 }
 
 .main-menu-list {
-  flex: 1 0;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (max-width: 599px){
+@media (max-width: 639px){
   .main-menu-list {
     display: none;
   }
