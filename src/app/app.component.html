@@ -13,8 +13,11 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="horizontal-spacer"></span>
-    <mat-nav-list class="main-menu-list">
+    <mat-nav-list class="menu-list">
       <app-main-menu class="horizontal"></app-main-menu>
+    </mat-nav-list>
+    <mat-nav-list class="menu-list" *ngIf="(currentUrl | async)?.includes('anmeldung')">
+      <app-anmelden-menu class="horizontal"></app-anmelden-menu>
     </mat-nav-list>
 <!--      <app-menu [menuItems]="mainMenu" class="main-menu-list"></app-menu>-->
     <span class="horizontal-spacer"></span>

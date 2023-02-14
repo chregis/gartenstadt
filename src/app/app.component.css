@@ -42,15 +42,16 @@
   flex: 1 0;
 }
 
-.main-menu-list {
+.menu-list {
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0!important;
 }
 
 @media (max-width: 639px){
-  .main-menu-list {
+  .menu-list {
     display: none;
   }
 }

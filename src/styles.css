@@ -24,6 +24,10 @@ app-main-menu  {
   background-color: #dddddd;
 }
 
+app-anmelden-menu {
+  font-size: 14px;
+}
+
 .sidenav-menu {
   background-color: lightgray;
 }

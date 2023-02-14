@@ -13,13 +13,15 @@ import { AnmeldungComponent } from './pages/anmeldung/anmeldung.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MainMenuComponent } from './menus/main-menu/main-menu.component';
 import {SharedModule} from "./shared/shared.module";
+import { AnmeldenMenuComponent } from './menus/anmelden-menu/anmelden-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnmeldungComponent,
     HomeComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    AnmeldenMenuComponent
   ],
   imports: [
     BrowserModule,
