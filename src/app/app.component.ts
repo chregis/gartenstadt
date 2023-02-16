@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import {MenuItem} from "./shared/menu/menu.component";
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
+import {Component} from '@angular/core';
+import {NavigationEnd, Router} from "@angular/router";
 import {filter, map, Observable, of} from "rxjs";
 
 @Component({
@@ -23,9 +22,9 @@ export class AppComponent {
   }
 
 
-  mainMenu: MenuItem[] = [
-    { name: 'das Musikfest', routerLink: 'home'},
-    { name: 'Mitmachen', routerLink: 'anmeldung'},
-    { name: 'Fotos', routerLink: 'fotos'},
-  ]
+  // mainMenu: MenuItem[] = [
+  //   { name: 'das Musikfest', routerLink: 'home'},
+  //   { name: 'Mitmachen', routerLink: 'anmeldung'},
+  //   { name: 'Fotos', routerLink: 'fotos'},
+  // ]
 }

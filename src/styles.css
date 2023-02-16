@@ -50,7 +50,20 @@ a.link-active {
   background-color: #9F2A32!important;
 }
 
+.title-active h3 {
+  background-color: #9F2A32;
+  color: #dddddd!important;
+  padding-left: 5px;
+}
 
+.paragraph {
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+
+.paragraph ul {
+  padding-left: 12px;
+}
 
 .bg-home {
   background-image: url("assets/img/bg_home.jpg");

@@ -58,7 +58,7 @@
 
 /* 3. PAGE */
 .page-content {
-  flex: 1 0;
+  flex: 1 0 auto;
   z-index: 0;
 }
 
