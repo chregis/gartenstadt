@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {filter, map, Observable, of} from "rxjs";
+import {MatSidenav} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,15 @@ import {filter, map, Observable, of} from "rxjs";
 export class AppComponent {
   currentUrl: Observable<string> = of('');
 
+  @ViewChild('sidenav') sidenav: MatSidenav | undefined;
+
   constructor(public router: Router) {
     this.currentUrl = this.router.events
       .pipe(
         filter(e => e instanceof NavigationEnd),
         map( e => {
           const event = e as NavigationEnd;
+          this.sidenav?.close();
           return event.urlAfterRedirects;
         })
       );

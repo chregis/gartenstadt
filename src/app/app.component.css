@@ -1,9 +1,14 @@
+
+
+/* STRUKTUR */
+
 .main-content {
   display: flex;
   flex-flow: column;
+  background-color: #dddddd;
 }
 
-/* 1. HEADER */
+/* 1. Logo (Musik-Wagen) */
 .header {
   flex: 0 1 100px;
   overflow: visible;
@@ -12,12 +17,12 @@
 
 .header img {
   width: 100%;
-  max-width: 600px;
+  max-width: 840px;
   position: relative;
 }
 
 
-/* 2. MENU */
+/* 2. horizonale Menü-Leiste */
 .sticky {
   flex: 0 1 50px;
   font-size: 20px;
@@ -26,20 +31,13 @@
   z-index: 1;
 }
 
-@media (min-width: 640px){
-  .sidenav-toggle-button {
-    display: none;
-  }
-}
+
 
 /* 2.1 */
 .horizontal {
   display: flex;
-  min-width: 640px;
+  flex: 1 0 auto;
   flex-flow: row;
-}
-.horizontal-spacer {
-  flex: 1 0;
 }
 
 .menu-list {
@@ -50,13 +48,8 @@
   padding: 0!important;
 }
 
-@media (max-width: 639px){
-  .menu-list {
-    display: none;
-  }
-}
 
-/* 3. PAGE */
+/* 3. Page */
 .page-content {
   flex: 1 0 auto;
   z-index: 0;
@@ -71,3 +64,26 @@
 
 
 
+/* SICHTBARKEITS-STEUERUNG */
+
+/*bei grossen Bildschirmen ausblenden: */
+@media (min-width: 640px){
+
+  /* ..."Hamburger"-Button */
+  .sidenav-toggle-button {
+    display: none;
+  }
+
+  /* ...vertikale Seiten-Menü-Leiste */
+  .sidenav-menu {
+    display: none;
+  }
+
+}
+
+/* horizontale Menü-Leiste ausblenden bei kleinen Bildschirmen */
+@media (max-width: 639px){
+  .menu-list {
+    display: none;
+  }
+}

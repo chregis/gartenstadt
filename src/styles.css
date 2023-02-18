@@ -8,13 +8,14 @@
 body {
   margin: 0;
   font-family: 'gsmf-font', sans-serif;
+  font-size: 20px;
 }
 
 html, body { height: 100%; }
 
 
 .content {
-  max-width: 600px;
+  max-width: 800px;
   padding: 20px;
   background-color: #eeeeee;
   position: relative;
@@ -22,10 +23,11 @@ html, body { height: 100%; }
 
 app-main-menu  {
   background-color: #dddddd;
+  font-size: 22px;
 }
 
 app-anmelden-menu {
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .sidenav-menu {
@@ -54,6 +56,10 @@ a.link-active {
   background-color: #9F2A32;
   color: #dddddd!important;
   padding-left: 5px;
+}
+
+.title-active {
+  background-color: #EFAEAA;
 }
 
 .paragraph {
