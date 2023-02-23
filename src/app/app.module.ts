@@ -15,6 +15,7 @@ import { MainMenuComponent } from './menus/main-menu/main-menu.component';
 import {SharedModule} from "./shared/shared.module";
 import { AnmeldenMenuComponent } from './menus/anmelden-menu/anmelden-menu.component';
 import { SponsorenComponent } from './pages/sponsoren/sponsoren.component';
+import { FotosComponent } from './pages/fotos/fotos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SponsorenComponent } from './pages/sponsoren/sponsoren.component';
     HomeComponent,
     MainMenuComponent,
     AnmeldenMenuComponent,
-    SponsorenComponent
+    SponsorenComponent,
+    FotosComponent
   ],
   imports: [
     BrowserModule,

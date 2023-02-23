@@ -1,24 +1,27 @@
 
 
 /* STRUKTUR */
+.main-content-wrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: center
+}
 
 .main-content {
-  display: flex;
-  flex-flow: column;
+  flex: 1 1 auto;
+  max-width: 840px;
   background-color: #dddddd;
 }
 
 /* 1. Logo (Musik-Wagen) */
 .header {
-  flex: 0 1 100px;
+  flex: 0 1;
   overflow: visible;
   text-align: center;
 }
 
 .header img {
   width: 100%;
-  max-width: 840px;
-  position: relative;
 }
 
 

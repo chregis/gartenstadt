@@ -15,10 +15,8 @@ html, body { height: 100%; }
 
 
 .content {
-  max-width: 800px;
   padding: 20px;
   background-color: #eeeeee;
-  position: relative;
 }
 
 app-main-menu  {
