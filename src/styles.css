@@ -78,3 +78,8 @@ a.link-active {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
+
+.fill-content {
+  width: 100%;
+}
