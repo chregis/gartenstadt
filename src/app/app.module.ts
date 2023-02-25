@@ -16,6 +16,7 @@ import {SharedModule} from "./shared/shared.module";
 import { AnmeldenMenuComponent } from './menus/anmelden-menu/anmelden-menu.component';
 import { SponsorenComponent } from './pages/sponsoren/sponsoren.component';
 import { FotosComponent } from './pages/fotos/fotos.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FotosComponent } from './pages/fotos/fotos.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
