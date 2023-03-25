@@ -13,6 +13,8 @@ body {
 
 html, body { height: 100%; }
 
+strong { color: #9F2A32 }
+
 
 .content {
   padding: 20px;
