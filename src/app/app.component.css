@@ -64,7 +64,15 @@
   align-items: center;
 }
 
+.sidenav-menu {
+  height: 0;
+  overflow: hidden;
+}
 
+.sidenav-menu.open {
+  transition: 1s;
+  height: 200px;
+}
 
 /* SICHTBARKEITS-STEUERUNG */
 

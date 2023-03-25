@@ -8,7 +8,7 @@
       <button
         class="sidenav-toggle-button"
         mat-icon-button
-        (click)="sidenav.toggle()">
+        (click)="toggleSideNav()">
         <mat-icon>menu</mat-icon>
       </button>
       <mat-nav-list class="menu-list">
@@ -17,20 +17,19 @@
       <mat-nav-list class="menu-list" *ngIf="(currentUrl | async)?.includes('anmeldung')">
         <app-anmelden-menu class="horizontal"></app-anmelden-menu>
       </mat-nav-list>
-  <!--      <app-menu [menuItems]="mainMenu" class="main-menu-list"></app-menu>-->
-    </div>
-
-    <mat-sidenav-container class="page-content">
-      <mat-sidenav #sidenav class="sidenav-menu">
+      <div class="sidenav-menu" [ngClass]="{ 'open': isSideNavVisible}" >
         <mat-nav-list>
           <app-main-menu class="vertical"></app-main-menu>
         </mat-nav-list>
-      </mat-sidenav>
-      <mat-sidenav-content>
-        <div class="router-wrapper">
-          <router-outlet></router-outlet>
-        </div>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+      </div>
+  <!--      <app-menu [menuItems]="mainMenu" class="main-menu-list"></app-menu>-->
+    </div>
+
+
+    <div class="page-content">
+      <div class="router-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
 </div>
