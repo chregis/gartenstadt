@@ -102,3 +102,22 @@ a.link-active {
 .fill-content {
   width: 100%;
 }
+
+.content-sponsoren .sponsor-logos {
+  text-align: center;
+}
+
+.content-sponsoren .sponsor-logos .sponsor-logo {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.content-sponsoren .sponsor-logos img {
+  height: 175px;
+}
+
+.content-sponsoren .sponsor-kirche img {
+  height: 109px;
+  max-width: 500px;
+  width: 100%;
+}
