@@ -20,7 +20,7 @@ export class FotosComponent implements OnInit, OnDestroy {
   private intervalSubscription: Subscription;
 
   constructor(private elementRef: ElementRef, private http: HttpClient) {
-    this.httpGetsSubscription = from(http.get('assets/img/foto-liste.json')).pipe(
+    this.httpGetsSubscription = from(http.get('assets/img/gallerie/foto-liste.json')).pipe(
       map( (data: any) => data.fotos as {url: string, description: string}[])
     ).subscribe( fotos => this.fotos = fotos);
 
@@ -42,7 +42,7 @@ export class FotosComponent implements OnInit, OnDestroy {
     }
 
     this.elementRef.nativeElement.ownerDocument
-      .body.style.backgroundImage = `url("assets/img/${this.fotos[this.currentFotoIndex].url}")`;
+      .body.style.backgroundImage = `url("assets/img/gallerie/${this.fotos[this.currentFotoIndex].url}")`;
   }
 
   next(autoslide: boolean = false) {
@@ -57,7 +57,7 @@ export class FotosComponent implements OnInit, OnDestroy {
     }
 
     this.elementRef.nativeElement.ownerDocument
-      .body.style.backgroundImage = `url("assets/img/${this.fotos[this.currentFotoIndex].url}")`;
+      .body.style.backgroundImage = `url("assets/img/gallerie/${this.fotos[this.currentFotoIndex].url}")`;
 
   }
 
