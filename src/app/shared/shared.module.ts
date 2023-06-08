@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
 import {MatListModule} from "@angular/material/list";
 import {RouterModule} from "@angular/router";
+import {ApiService} from "./api/api.service";
 
 
 
@@ -12,6 +13,9 @@ import {RouterModule} from "@angular/router";
   ],
   exports: [
     MenuComponent
+  ],
+  providers: [
+    ApiService
   ],
   imports: [
     CommonModule,

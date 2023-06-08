@@ -1,27 +1,20 @@
 <div class="content content-sponsoren">
   <h1 class="page-title">Sponsoren</h1>
 
-  <div>herzlichen Dank an:</div>
+  <div>Herzlichen Dank an:</div>
   <ul>
-    <li>Drogerie Stapfen (<a href="http://www.drogisan.ch/" target="gsmf-ext">Webseite</a>)</li>
-    <li>Fuchs Ursula</li>
-    <li>Kuhn und Bieri (<a href="https://www.kuhnbieri.ch/de/" target="gsmf-ext">Webseite</a>)</li>
-    <li>Pizzeria Babylon (<a href="https://pizza-babylon.ch/" target="gsmf-ext">Webseite</a>)</li>
+    <li *ngFor="let sponsor of (sponsorenOhneLogo$ | async)">
+      <span>{{sponsor.name}}</span>
+      <span *ngIf="sponsor.page_url">(<a href="{{sponsor.page_url}}" target="gsmf-ext">Webseite</a>)</span>
+    </li>
   </ul>
   <div class="sponsor-logos">
-    <div class="sponsor-logo sponsor-vetcetera">
-      <a href="https://www.vetcetera.ch/" target="gsmf-ext">
-        <img alt="Sponsor VETCETERA Tierarztpraxis" src="assets/img/sponsoren/Logo%20Vetcetera.jpg">
-      </a>
-    </div>
-    <div class="sponsor-logo spsonsor-mobiliar">
-      <a href="https://mobiliar.ch/" target="gsmf-ext">
-        <img alt="Sponsor die Mobiliar" src="assets/img/sponsoren/Logo%20Mobiliar.png">
-      </a>
-    </div>
-    <div class="sponsor-logo sponsor-kirche">
-      <a href="https://www.kg-koeniz.ch/de/meine-kirchgemeinde/kirchenkreise/kirchenkreis-mitte/" target="gsmf-ext">
-        <img alt="Sponsor Evangelisch-reformierte Kirchgemeinde Köniz" src="assets/img/sponsoren/Logo%20Kirchgemeinde.jpg">
+    <div *ngFor="let sponsor of (sponsorenMitLogo$ | async)"
+         class="sponsor-logo">
+      <a [href]="sponsor.page_url" target="gsmf-ext">
+        <img alt="Sponsor {{sponsor.name}}"
+             [style]="sponsor.img_style"
+             [src]="'assets/img/sponsoren/' + sponsor.logo_url">
       </a>
     </div>
   </div>

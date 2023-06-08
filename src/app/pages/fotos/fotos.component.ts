@@ -1,28 +1,32 @@
 import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
-import {filter, from, interval, map, Subscription} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import {filter, interval, Subscription} from "rxjs";
+import {ApiService} from "../../shared/api/api.service";
+
+interface FotoRef {
+  url: string,
+  description: string
+}
 
 @Component({
   selector: 'app-fotos',
   templateUrl: './fotos.component.html',
-  styleUrls: ['./fotos.component.css']           ,
+  styleUrls: ['./fotos.component.css'],
   host: {
     style: 'width: 100%;',
   }
 })
 export class FotosComponent implements OnInit, OnDestroy {
 
-  fotos: {url: string, description: string}[] | undefined;
+  fotos: FotoRef[] | undefined;
   currentFotoIndex = 0;
-  private httpGetsSubscription: Subscription;
+  private apiSubscription: Subscription;
 
   autoSlide = true;
   private intervalSubscription: Subscription;
 
-  constructor(private elementRef: ElementRef, private http: HttpClient) {
-    this.httpGetsSubscription = from(http.get('assets/img/gallerie/foto-liste.json')).pipe(
-      map( (data: any) => data.fotos as {url: string, description: string}[])
-    ).subscribe( fotos => this.fotos = fotos);
+  constructor(private elementRef: ElementRef, private api: ApiService) {
+    this.apiSubscription = api.getData<FotoRef[]>('assets/img/gallerie/foto-liste.json', 'fotos')
+      .subscribe( fotos => this.fotos = fotos);
 
     this.intervalSubscription = interval(5000)
       .pipe(filter( () => this.autoSlide))
@@ -45,8 +49,8 @@ export class FotosComponent implements OnInit, OnDestroy {
       .body.style.backgroundImage = `url("assets/img/gallerie/${this.fotos[this.currentFotoIndex].url}")`;
   }
 
-  next(autoslide: boolean = false) {
-    this.autoSlide = autoslide;
+  next(autoSlide: boolean = false) {
+    this.autoSlide = autoSlide;
     if(!this.fotos) {
       return;
     }
@@ -71,7 +75,7 @@ export class FotosComponent implements OnInit, OnDestroy {
     //   .body.style.backgroundImage = null;
     this.elementRef.nativeElement.ownerDocument
       .body.style.backgroundSize = null;
-    this.httpGetsSubscription.unsubscribe();
+    this.apiSubscription.unsubscribe();
     this.intervalSubscription.unsubscribe();
   }
 
