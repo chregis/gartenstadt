@@ -14,9 +14,9 @@
       <mat-nav-list class="menu-list">
         <app-main-menu class="horizontal"></app-main-menu>
       </mat-nav-list>
-      <mat-nav-list class="menu-list" *ngIf="(currentUrl | async)?.includes('anmeldung')">
-        <app-anmelden-menu class="horizontal"></app-anmelden-menu>
-      </mat-nav-list>
+<!--      <mat-nav-list class="menu-list" *ngIf="(currentUrl | async)?.includes('anmeldung')">-->
+<!--        <app-anmelden-menu class="horizontal"></app-anmelden-menu>-->
+<!--      </mat-nav-list>-->
       <div class="sidenav-menu" [ngClass]="{ 'open': isSideNavVisible}" >
         <mat-nav-list>
           <app-main-menu class="vertical"></app-main-menu>
@@ -25,11 +25,15 @@
   <!--      <app-menu [menuItems]="mainMenu" class="main-menu-list"></app-menu>-->
     </div>
 
-
     <div class="page-content">
       <div class="router-wrapper">
         <router-outlet></router-outlet>
       </div>
+    </div>
+    <div *ngIf="!(currentUrl | async)?.includes('fotos')"
+         class="footer">
+      <span>Kontakt: haasanita(ät)outlook.com</span>
+      <span>Webmaster: christian.spiller(ät)chaosnet.ch</span>
     </div>
   </div>
 </div>

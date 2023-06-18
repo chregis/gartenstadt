@@ -27,4 +27,5 @@ export class AppComponent {
   toggleSideNav() {
     this.isSideNavVisible = !this.isSideNavVisible;
   }
+
 }
