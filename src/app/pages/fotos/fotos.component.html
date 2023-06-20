@@ -1,3 +1,9 @@
+<mat-nav-list class="album-list">
+  <a *ngFor="let album of albums"
+     mat-list-item
+     routerLink="fotos"
+     fragment="{{album.description}}">{{album.description}}</a>
+</mat-nav-list>
 <div class="foto-content">
   <button class="foto-album-button left"
           mat-icon-button
