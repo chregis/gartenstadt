@@ -35,5 +35,9 @@
       <span>Kontakt: haasanita(ät)outlook.com</span>
       <span>Webmaster: christian.spiller(ät)chaosnet.ch</span>
     </div>
+    <div *ngIf="(currentUrl | async)?.includes('fotos')"
+         class="footer" style="font-size: 20px">
+      Fotos von letztem Samstag folgen in ein paar Tagen!
+    </div>
   </div>
 </div>
