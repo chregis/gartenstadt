@@ -22,6 +22,8 @@ export class FotosComponent implements OnInit, OnDestroy {
 
   autoSlide = true;
   private intervalSubscription: Subscription;
+  fotoDescription: string = '';
+  copyright: string = '';
 
   constructor(private elementRef: ElementRef, private api: ApiService, private fotoService: FotoService, private route: ActivatedRoute) {
 
@@ -38,9 +40,9 @@ export class FotosComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.intervalSubscription = interval(20000)
+    this.intervalSubscription = interval(7000)
       .pipe(filter( () => this.autoSlide))
-      .subscribe( () => this.next(true));
+      .subscribe( () => this.nextFoto(true));
 
     this.route.params.pipe(
       filter( (params: any) => params.albumId != null),
@@ -60,14 +62,15 @@ export class FotosComponent implements OnInit, OnDestroy {
       .pipe( filter( fotos => fotos.length > 0))
       .subscribe( fotos => {
         console.log("Set fotos for album: ", album);
-        this.fotos = fotos;
+        this.fotos = fotos.sort( (a, b) => a.path.localeCompare(b.path));
         this.currentAlbumIndex = albumIndex;
         this.currentFotoIndex = 0;
         this.setBackgroundImage();
+        this.setFotoDescription();
       });
   }
 
-  prev($event: MouseEvent) {
+  previousFoto($event: MouseEvent) {
     $event.preventDefault();
     $event.stopPropagation();
 
@@ -82,9 +85,10 @@ export class FotosComponent implements OnInit, OnDestroy {
     }
 
     this.setBackgroundImage();
+    this.setFotoDescription();
   }
 
-  next(autoSlide: boolean = false, $event?: Event) {
+  nextFoto(autoSlide: boolean = false, $event?: Event) {
     $event?.preventDefault();
     $event?.stopPropagation();
     this.autoSlide = autoSlide;
@@ -98,6 +102,7 @@ export class FotosComponent implements OnInit, OnDestroy {
     }
 
     this.setBackgroundImage();
+    this.setFotoDescription();
   }
 
   private setBackgroundImage() {
@@ -106,6 +111,19 @@ export class FotosComponent implements OnInit, OnDestroy {
 
     this.elementRef.nativeElement.ownerDocument
       .body.style.backgroundImage = `url("/gallerie/${albumPath}/${fotoPath}")`;
+  }
+
+  private setFotoDescription() {
+    const fotoRef = this.fotos[this.currentFotoIndex];
+    const fotoPath = fotoRef.path;
+    let descriptionFromPath, copyright;
+    let parts = fotoPath.split("/");
+    parts = parts.slice(0, parts.length-1); // remove file-name
+    [descriptionFromPath, copyright] = parts;
+    descriptionFromPath = descriptionFromPath.replace(/\d*\w/, "");
+    this.fotoDescription = fotoRef.description || descriptionFromPath || '';
+    this.copyright = copyright || '';
+
   }
 
   ngOnInit(): void {

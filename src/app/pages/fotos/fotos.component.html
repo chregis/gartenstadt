@@ -1,16 +1,16 @@
 <div class="foto-content">
   <button class="foto-album-button left"
           mat-icon-button
-          (click)="prev($event)">
+          (click)="previousFoto($event)">
     <mat-icon>arrow_left</mat-icon>
   </button>
   <button class="foto-album-button right"
     mat-icon-button
-    (click)="next(false, $event)">
+    (click)="nextFoto(false, $event)">
     <mat-icon>arrow_right</mat-icon>
   </button>
-  <div class="foto-footer sidenav-menu">
-<!--    <span class="description"> Description </span>-->
-    <span class="copyright"> Foto: Heinz Bigler </span>
+  <div *ngIf="fotoDescription || copyright" class="foto-footer sidenav-menu">
+    <span class="description"> {{ fotoDescription }}</span>
+<!--    <span *ngIf="copyright" class="copyright"> Foto: {{copyright}}</span>-->
   </div>
 </div>
