@@ -38,7 +38,7 @@ export class FotosComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.intervalSubscription = interval(5000)
+    this.intervalSubscription = interval(20000)
       .pipe(filter( () => this.autoSlide))
       .subscribe( () => this.next(true));
 
@@ -57,6 +57,7 @@ export class FotosComponent implements OnInit, OnDestroy {
     const album = this.albums[albumIndex];
     this.fotoService.loadAlbum(albumIndex);
     this.fotoService.getFotoList(albumIndex)
+      .pipe( filter( fotos => fotos.length > 0))
       .subscribe( fotos => {
         console.log("Set fotos for album: ", album);
         this.fotos = fotos;
@@ -66,7 +67,10 @@ export class FotosComponent implements OnInit, OnDestroy {
       });
   }
 
-  prev() {
+  prev($event: MouseEvent) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
     this.autoSlide = false;
     if(!this.fotos) {
       return;
@@ -80,7 +84,9 @@ export class FotosComponent implements OnInit, OnDestroy {
     this.setBackgroundImage();
   }
 
-  next(autoSlide: boolean = false) {
+  next(autoSlide: boolean = false, $event?: Event) {
+    $event?.preventDefault();
+    $event?.stopPropagation();
     this.autoSlide = autoSlide;
     if(this.fotos.length == 0) {
       return;

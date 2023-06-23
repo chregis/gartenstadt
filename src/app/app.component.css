@@ -10,7 +10,7 @@
 .main-content {
   flex: 1 1 auto;
   max-width: 840px;
-  background-color: #dddddd;
+  /*background-color: #dddddd;*/
 }
 
 /* 1. Logo (Musik-Wagen) */
@@ -26,12 +26,26 @@
 
 
 /* 2. horizonale Menü-Leiste */
-.sticky {
-  flex: 0 1 50px;
+.menu {
   font-size: 20px;
+  z-index: 1;
+}
+
+.sticky {
   position: sticky; /* Info: https://clubmate.fi/position-sticky-in-css */
   top: 0;
-  z-index: 1;
+}
+
+.auto-visible.visible {
+  position: relative;
+  top: 0;
+  transition: 1s;
+}
+
+.auto-visible.hidden {
+  position: relative;
+  top: -100px;
+  transition: 1s;
 }
 
 
@@ -56,6 +70,7 @@
 .page-content {
   flex: 1 0 auto;
   z-index: 0;
+  background-color: #dddddd;
 }
 
 .router-wrapper {

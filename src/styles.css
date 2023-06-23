@@ -55,10 +55,12 @@ app-anmelden-menu {
 
 a {
   color: #9F2A32!important;
+  background-color: #dddddd!important;
 }
 
 a:visited {
   color: #9F2A32!important;
+  background-color: #dddddd!important;
 }
 
 a:hover {

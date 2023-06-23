@@ -1,12 +1,12 @@
 <div class="foto-content">
   <button class="foto-album-button left"
           mat-icon-button
-          (click)="prev()">
+          (click)="prev($event)">
     <mat-icon>arrow_left</mat-icon>
   </button>
   <button class="foto-album-button right"
     mat-icon-button
-    (click)="next()">
+    (click)="next(false, $event)">
     <mat-icon>arrow_right</mat-icon>
   </button>
   <div class="foto-footer sidenav-menu">
