@@ -1,16 +1,10 @@
 import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
-import {filter, interval, Subscription} from "rxjs";
+import {filter, interval, map, Subscription} from "rxjs";
 import {ApiService} from "../../shared/api/api.service";
-
-interface FotoRef {
-  url: string,
-  description: string
-}
-
-interface AlbumRef {
-  path: string,
-  description: string
-}
+import {ActivatedRoute} from "@angular/router";
+import {AlbumRef} from "../../shared/foto/album-ref.model";
+import {FotoRef} from "./foto-ref.model";
+import {FotoService} from "../../shared/foto/foto.service";
 
 @Component({
   selector: 'app-fotos',
@@ -29,24 +23,47 @@ export class FotosComponent implements OnInit, OnDestroy {
   autoSlide = true;
   private intervalSubscription: Subscription;
 
-  constructor(private elementRef: ElementRef, private api: ApiService) {
+  constructor(private elementRef: ElementRef, private api: ApiService, private fotoService: FotoService, private route: ActivatedRoute) {
 
-    this.api.getData<AlbumRef[]>('gallerie/album-liste.json', 'albums')
-      .subscribe( albums => {
-        this.albums = albums;
-        if(this.albums.length > 0) {
-          this.loadAlbum(this.albums[0]);
+    this.fotoService.loadAlbumList();
+    this.fotoService.getAlbumList().subscribe( albums => {
+      this.albums = albums;
+      if(this.albums.length > 0) {
+        if(this.route.snapshot.params['albumId'] !== null) {
+          const index = this.albums.findIndex( album => album.description == this.route.snapshot.params['albumId']);
+          this.loadAlbum(index);
+          return;
         }
-      });
+        this.loadAlbum(0);
+      }
+    });
 
     this.intervalSubscription = interval(5000)
       .pipe(filter( () => this.autoSlide))
       .subscribe( () => this.next(true));
+
+    this.route.params.pipe(
+      filter( (params: any) => params.albumId != null),
+      map( (params: any) =>  params.albumId)
+    ).subscribe( albumId => {
+      const foundIndex = this.albums.findIndex( album => album.description === albumId);
+      if(foundIndex >= 0) {
+        this.loadAlbum(foundIndex);
+      }
+    });
   }
 
-  loadAlbum(album: AlbumRef) {
-    this.api.getData<FotoRef[]>(`gallerie/${album.path}/foto-liste.json`, 'fotos')
-      .subscribe( fotos => this.fotos = fotos);
+  loadAlbum(albumIndex: number) {
+    const album = this.albums[albumIndex];
+    this.fotoService.loadAlbum(albumIndex);
+    this.fotoService.getFotoList(albumIndex)
+      .subscribe( fotos => {
+        console.log("Set fotos for album: ", album);
+        this.fotos = fotos;
+        this.currentAlbumIndex = albumIndex;
+        this.currentFotoIndex = 0;
+        this.setBackgroundImage();
+      });
   }
 
   prev() {
@@ -79,7 +96,7 @@ export class FotosComponent implements OnInit, OnDestroy {
 
   private setBackgroundImage() {
     const albumPath = this.albums[this.currentAlbumIndex].path;
-    const fotoPath = this.fotos[this.currentFotoIndex].url;
+    const fotoPath = this.fotos[this.currentFotoIndex].path;
 
     this.elementRef.nativeElement.ownerDocument
       .body.style.backgroundImage = `url("/gallerie/${albumPath}/${fotoPath}")`;

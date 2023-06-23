@@ -1,0 +1,4 @@
+<a *ngFor="let album of albums | async; let index=index"
+   mat-list-item
+   routerLink="/fotos/{{album.description}}"
+   routerLinkActive="link-active">{{album.description}}</a>

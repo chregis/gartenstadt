@@ -14,9 +14,12 @@
       <mat-nav-list class="menu-list">
         <app-main-menu class="horizontal"></app-main-menu>
       </mat-nav-list>
-<!--      <mat-nav-list class="menu-list" *ngIf="(currentUrl | async)?.includes('anmeldung')">-->
-<!--        <app-anmelden-menu class="horizontal"></app-anmelden-menu>-->
-<!--      </mat-nav-list>-->
+      <mat-nav-list class="menu-list" *ngIf="(currentUrl | async)?.includes('anmeldung')">
+        <app-anmelden-menu class="horizontal"></app-anmelden-menu>
+      </mat-nav-list>
+      <mat-nav-list class="menu-list" *ngIf="(currentUrl | async)?.includes('fotos')">
+        <app-foto-album-menu class="horizontal"></app-foto-album-menu>
+      </mat-nav-list>
       <div class="sidenav-menu" [ngClass]="{ 'open': isSideNavVisible}" >
         <mat-nav-list>
           <app-main-menu class="vertical"></app-main-menu>
@@ -34,10 +37,6 @@
          class="footer">
       <span>Kontakt: haasanita(ät)outlook.com</span>
       <span>Webmaster: christian.spiller(ät)chaosnet.ch</span>
-    </div>
-    <div *ngIf="(currentUrl | async)?.includes('fotos')"
-         class="footer" style="font-size: 20px">
-      Fotos von letztem Samstag folgen in ein paar Tagen!
     </div>
   </div>
 </div>

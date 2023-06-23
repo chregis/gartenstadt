@@ -1,9 +1,3 @@
-<mat-nav-list class="album-list">
-  <a *ngFor="let album of albums"
-     mat-list-item
-     routerLink="fotos"
-     fragment="{{album.description}}">{{album.description}}</a>
-</mat-nav-list>
 <div class="foto-content">
   <button class="foto-album-button left"
           mat-icon-button
@@ -15,4 +9,8 @@
     (click)="next()">
     <mat-icon>arrow_right</mat-icon>
   </button>
+  <div class="foto-footer sidenav-menu">
+<!--    <span class="description"> Description </span>-->
+    <span class="copyright"> Foto: Heinz Bigler </span>
+  </div>
 </div>

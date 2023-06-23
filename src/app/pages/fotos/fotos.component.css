@@ -3,3 +3,14 @@
   flex: 1 0 auto;
   flex-flow: row;
 }
+
+.highlight {
+  background-color: red;
+}
+
+.foto-footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding: 5px;
+}

@@ -21,6 +21,10 @@ const routes: Routes = [
   },
   {
     path: 'fotos',
+    redirectTo: 'fotos/2023'
+  },
+  {
+    path: 'fotos/:albumId',
     component: FotosComponent
   },
   {

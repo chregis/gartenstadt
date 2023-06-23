@@ -20,6 +20,7 @@ import { StartSeiteVorAnlassComponent } from './pages/home/start-seite-vor-anlas
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { FormularLinksComponent } from './pages/anmeldung/formular-links/formular-links.component';
 import { StartSeiteNachAnlassComponent } from './pages/home/start-seite-nach-anlass/start-seite-nach-anlass.component';
+import { FotoAlbumMenuComponent } from './menus/foto-album-menu/foto-album-menu.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { StartSeiteNachAnlassComponent } from './pages/home/start-seite-nach-anl
     DasOkComponent,
     StartSeiteVorAnlassComponent,
     FormularLinksComponent,
-    StartSeiteNachAnlassComponent
+    StartSeiteNachAnlassComponent,
+    FotoAlbumMenuComponent
   ],
     imports: [
         BrowserModule,
