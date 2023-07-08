@@ -71,6 +71,7 @@ export class FotosComponent implements OnInit, OnDestroy {
   }
 
   previousFoto($event: MouseEvent) {
+    // TODO menu wird auf dem Handy trotzdem eingeblendet!
     $event.preventDefault();
     $event.stopPropagation();
 
