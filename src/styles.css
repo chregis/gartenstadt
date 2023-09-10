@@ -49,18 +49,22 @@ app-anmelden-menu {
   font-size: 20px;
 }
 
+app-foto-album-menu {
+  background-color: #dddddd;
+}
+
 .sidenav-menu {
   background-color: lightgray;
 }
 
 a {
   color: #9F2A32!important;
-  background-color: #dddddd!important;
+  /*background-color: #dddddd!important;*/
 }
 
 a:visited {
   color: #9F2A32!important;
-  background-color: #dddddd!important;
+  /*background-color: #dddddd!important;*/
 }
 
 a:hover {
@@ -126,4 +130,8 @@ a.link-active {
 
 .programm {
   width: 100%;
+}
+
+.footer {
+  background-color: #dddddd;
 }

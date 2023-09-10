@@ -21,6 +21,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import { FormularLinksComponent } from './pages/anmeldung/formular-links/formular-links.component';
 import { StartSeiteNachAnlassComponent } from './pages/home/start-seite-nach-anlass/start-seite-nach-anlass.component';
 import { FotoAlbumMenuComponent } from './menus/foto-album-menu/foto-album-menu.component';
+import { DatenschutzerklaerungComponent } from './pages/datenschutz/datenschutzerklaerung/datenschutzerklaerung.component';
+import { ImpressumComponent } from './pages/datenschutz/impressum/impressum.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { FotoAlbumMenuComponent } from './menus/foto-album-menu/foto-album-menu.
     StartSeiteVorAnlassComponent,
     FormularLinksComponent,
     StartSeiteNachAnlassComponent,
-    FotoAlbumMenuComponent
+    FotoAlbumMenuComponent,
+    DatenschutzerklaerungComponent,
+    ImpressumComponent
   ],
     imports: [
         BrowserModule,

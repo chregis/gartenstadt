@@ -35,8 +35,8 @@
     </div>
     <div *ngIf="!(currentUrl$ | async)?.includes('fotos')"
          class="footer">
-      <span>Kontakt: haasanita(ät)outlook.com</span>
-      <span>Webmaster: christian.spiller(ät)chaosnet.ch</span>
+      <span><a routerLink="/impressum">Impressum</a></span>
+      <span><a routerLink="/datenschutz">Datenschutzerklärung</a></span>
     </div>
   </div>
 </div>

@@ -3,3 +3,13 @@ Dynamic Routing:
 ----------------
 https://levelup.gitconnected.com/angular-dynamic-routing-299c04ca75b1
 https://material.angular.io/cdk/portal/overview
+
+
+Generator für Datenschutzerklärung/Impressum
+------------------------------------------
+https://app.legally-ok.com/
+
+Die Datenschutzerklärung wurde mithilfe des Formulars von legally-ok erstellt und abgeändert:
+- Bestellformular => Anmeldeformular
+- Kontakte als Objekte eingebunden
+- Begriff 'Verein' entfernt
