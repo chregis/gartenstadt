@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
+## Install
+- download and install node.js https://nodejs.org/en
+- run ```npm install``` on project home to install dependencies (Angular, Typescript, ...)
+- run ```npm run build``` on project home to create the page
+- upload the files under 'dist' to the server
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
