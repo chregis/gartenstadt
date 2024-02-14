@@ -102,7 +102,5 @@
       }
     }
   },
-  "cli": {
-    "analytics": false
-  }
+  "defaultProject": "gartenstadt"
 }
