@@ -4,7 +4,7 @@
       <img *ngIf="!(currentUrl$ | async)?.includes('fotos')" src="/assets/Wagen_mit_Text_farbig.png" alt="fahrende Bühne">
     </div>
 
-    <div class="menu {{ (currentUrl$ | async)?.includes('fotos') ? autoVisibleClass: 'sticky'}}">
+    <div class="menu {{ (currentUrl$ | async)?.includes('fotos') ? autoVisibleClass : 'sticky'}}">
       <button
         class="sidenav-toggle-button"
         mat-icon-button
