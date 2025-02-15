@@ -4,8 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
-import {MatLegacyListModule as MatListModule} from "@angular/material/legacy-list";
-import {MatLegacyButtonModule as MatButtonModule} from "@angular/material/legacy-button";
 import { AnmeldungComponent } from './pages/anmeldung/anmeldung.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MainMenuComponent } from './menus/main-menu/main-menu.component';
@@ -17,12 +15,14 @@ import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http"
 import { StartSeiteFuerAnmeldungComponent } from './pages/home/start-seite-fuer-anmeldung/start-seite-fuer-anmeldung.component';
 import { DasOkComponent } from './pages/home/das-ok/das-ok.component';
 import { StartSeiteVorAnlassComponent } from './pages/home/start-seite-vor-anlass/start-seite-vor-anlass.component';
-import {MatLegacyTooltipModule as MatTooltipModule} from "@angular/material/legacy-tooltip";
 import { FormularLinksComponent } from './pages/anmeldung/formular-links/formular-links.component';
 import { StartSeiteNachAnlassComponent } from './pages/home/start-seite-nach-anlass/start-seite-nach-anlass.component';
 import { FotoAlbumMenuComponent } from './menus/foto-album-menu/foto-album-menu.component';
 import { DatenschutzerklaerungComponent } from './pages/datenschutz/datenschutzerklaerung/datenschutzerklaerung.component';
 import { ImpressumComponent } from './pages/datenschutz/impressum/impressum.component';
+import {MatListModule} from "@angular/material/list";
+import {MatButtonModule} from "@angular/material/button";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({ declarations: [
         AppComponent,
