@@ -13,7 +13,7 @@ import {SharedModule} from "./shared/shared.module";
 import { AnmeldenMenuComponent } from './menus/anmelden-menu/anmelden-menu.component';
 import { SponsorenComponent } from './pages/sponsoren/sponsoren.component';
 import { FotosComponent } from './pages/fotos/fotos.component';
-import {HttpClientModule} from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { StartSeiteFuerAnmeldungComponent } from './pages/home/start-seite-fuer-anmeldung/start-seite-fuer-anmeldung.component';
 import { DasOkComponent } from './pages/home/das-ok/das-ok.component';
 import { StartSeiteVorAnlassComponent } from './pages/home/start-seite-vor-anlass/start-seite-vor-anlass.component';
@@ -24,36 +24,29 @@ import { FotoAlbumMenuComponent } from './menus/foto-album-menu/foto-album-menu.
 import { DatenschutzerklaerungComponent } from './pages/datenschutz/datenschutzerklaerung/datenschutzerklaerung.component';
 import { ImpressumComponent } from './pages/datenschutz/impressum/impressum.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    AnmeldungComponent,
-    HomeComponent,
-    MainMenuComponent,
-    AnmeldenMenuComponent,
-    SponsorenComponent,
-    FotosComponent,
-    StartSeiteFuerAnmeldungComponent,
-    DasOkComponent,
-    StartSeiteVorAnlassComponent,
-    FormularLinksComponent,
-    StartSeiteNachAnlassComponent,
-    FotoAlbumMenuComponent,
-    DatenschutzerklaerungComponent,
-    ImpressumComponent
-  ],
-    imports: [
-        BrowserModule,
+@NgModule({ declarations: [
+        AppComponent,
+        AnmeldungComponent,
+        HomeComponent,
+        MainMenuComponent,
+        AnmeldenMenuComponent,
+        SponsorenComponent,
+        FotosComponent,
+        StartSeiteFuerAnmeldungComponent,
+        DasOkComponent,
+        StartSeiteVorAnlassComponent,
+        FormularLinksComponent,
+        StartSeiteNachAnlassComponent,
+        FotoAlbumMenuComponent,
+        DatenschutzerklaerungComponent,
+        ImpressumComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
-        HttpClientModule,
         BrowserAnimationsModule,
         MatIconModule,
         MatListModule,
         MatButtonModule,
         SharedModule,
-        MatTooltipModule
-    ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+        MatTooltipModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
