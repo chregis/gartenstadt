@@ -23,22 +23,20 @@ export class AnmeldungComponent implements OnInit {
   scroll(): void {
     try {
       if(this.fragment) {
-        console.log('SCROLL');
-        // document?.getElementById(this.fragment)?.scrollIntoView();
+
         const element = document?.getElementById(this.fragment);
         if(!element) {
           return;
         }
 
-        const scrollContainer = document.querySelector(".mat-drawer-content");
+        const scrollContainer = document.querySelector(".page-content");
         const scrollPositionY: number = element.offsetTop;
 
-        console.log("Scroll To", scrollPositionY);
-        if(scrollPositionY != null && scrollContainer) {
-          scrollContainer.scrollTo({ top: scrollPositionY + -100, behavior: "smooth" });
-        } else {
+        // if(scrollPositionY != null && scrollContainer) {
+        //   scrollContainer.scrollTo({ top: scrollPositionY + -100, behavior: "smooth" });
+        // } else {
           element.scrollIntoView({behavior: "smooth", block: "center"});
-        }
+        // }
 
       }
     } catch (e) { }
