@@ -1,24 +1,26 @@
 <div class="content content-sponsoren">
-  <h1 class="page-title">Sponsoren 2023</h1>
+  <h1 class="page-title">Sponsoren</h1>
 
-  <div>Herzlichen Dank an:</div>
-  <ul>
-    <li *ngFor="let sponsor of (sponsorenOhneLogo$ | async)">
-      <span>{{sponsor.name}}</span>
-      <span *ngIf="sponsor.page_url">(<a href="{{sponsor.page_url}}" target="gsmf-ext">Webseite</a>)</span>
-    </li>
-  </ul>
-  <div class="sponsor-logos">
-    <div *ngFor="let sponsor of (sponsorenMitLogo$ | async)"
-         class="sponsor-logo">
-      <a [href]="sponsor.page_url" target="gsmf-ext">
-        <img alt="Sponsor {{sponsor.name}}"
-             [style]="sponsor.img_style"
-             [src]="'assets/img/sponsoren/' + sponsor.logo_url">
-      </a>
+  <div>Über finanzielle Beiträge freuen wis uns sehr!</div>
+  <div>IBAN: CH90 8080 8009 1350 8357 9</div>
+
+  @if (sponsorenOhneLogo.length > 0 || sponsorenMitLogo.length > 0) {
+    <div>Herzlichen Dank an:</div>
+    <ul>
+      <li *ngFor="let sponsor of sponsorenOhneLogo">
+        <span>{{sponsor.name}}</span>
+        <span *ngIf="sponsor.page_url">(<a href="{{sponsor.page_url}}" target="gsmf-ext">Webseite</a>)</span>
+      </li>
+    </ul>
+    <div class="sponsor-logos">
+      <div *ngFor="let sponsor of sponsorenMitLogo"
+           class="sponsor-logo">
+        <a [href]="sponsor.page_url" target="gsmf-ext">
+          <img alt="Sponsor {{sponsor.name}}"
+               [style]="sponsor.img_style"
+               [src]="'assets/img/sponsoren/' + sponsor.logo_url">
+        </a>
+      </div>
     </div>
-  </div>
-  <p>
-  <div>Über weitere finanzielle Beiträge freuen wis uns sehr!</div>
-  <div>IBAN: CH90 8080 8009 1350 8357 9<br>OK Musikfest Gartenstadt</div>
+  }
 </div>
