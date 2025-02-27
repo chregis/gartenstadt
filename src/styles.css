@@ -30,7 +30,11 @@ strong { color: #9F2A32 }
   align-items: center;
   justify-content: center;
   padding: 0!important;
-  height: 30px;
+  height: 40px;
+}
+
+.menu-list.secondary {
+  font-size: 20px;
 }
 
 .menu-list a {
@@ -38,7 +42,8 @@ strong { color: #9F2A32 }
   display: flex;
   flex: 1 0 auto;
   justify-content: center;
-  height: 30px;
+  align-items: center;
+  height: 40px;
 }
 
 .sidenav-menu a {

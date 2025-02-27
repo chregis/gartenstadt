@@ -14,9 +14,8 @@ export class AnmeldungComponent implements OnInit {
 
   ngOnInit() {
     this.route.fragment.subscribe( (fragment: any) => {
-      console.log(`fragment ${fragment}`);
       this.fragment = fragment;
-      this.scroll();
+      setTimeout(() => this.scroll(), 200);
     });
   }
 
@@ -29,8 +28,8 @@ export class AnmeldungComponent implements OnInit {
           return;
         }
 
-        const scrollContainer = document.querySelector(".page-content");
-        const scrollPositionY: number = element.offsetTop;
+        // const scrollContainer = document.querySelector(".page-content");
+        // const scrollPositionY: number = element.offsetTop;
 
         // if(scrollPositionY != null && scrollContainer) {
         //   scrollContainer.scrollTo({ top: scrollPositionY + -100, behavior: "smooth" });

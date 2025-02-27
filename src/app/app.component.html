@@ -15,15 +15,15 @@
       <app-main-menu class="only-on-big-screen menu-list horizontal"></app-main-menu>
 
       <app-anmelden-menu *ngIf="(currentUrl$ | async)?.includes('anmeldung')"
-                           class="only-on-big-screen menu-list horizontal"></app-anmelden-menu>
+                           class="only-on-big-screen menu-list secondary horizontal"></app-anmelden-menu>
 
       <app-foto-album-menu *ngIf="(currentUrl$ | async)?.includes('fotos')"
-                           class="menu-list horizontal"></app-foto-album-menu>
+                           class="menu-list secondary horizontal"></app-foto-album-menu>
 
       <div class="sidenav-menu" [ngClass]="{ 'open': isSideNavVisible}" >
         <app-main-menu class="vertical"></app-main-menu>
       </div>
-  <!--      <app-menu [menuItems]="mainMenu" class="main-menu-list"></app-menu>-->
+
     </div>
 
     <div class="page-content">
