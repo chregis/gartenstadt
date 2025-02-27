@@ -48,22 +48,46 @@
   transition: 1s;
 }
 
-
-
-/* 2.1 */
-.horizontal {
-  display: flex;
-  flex: 1 0 auto;
-  flex-flow: row;
+.sidenav-menu {
+  position: fixed;
+  top: 0;
+  height: 0;
+  overflow: hidden;
 }
 
-.menu-list {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0!important;
+.sidenav-menu.open {
+  height: auto;
 }
+
+.sidenav-toggle-button {
+  position: fixed;
+  top: 0;
+}
+
+/* SICHTBARKEITS-STEUERUNG */
+
+/*bei grossen Bildschirmen ausblenden: */
+@media (min-width: 750px){
+
+  /* ..."Hamburger"-Button */
+  .sidenav-toggle-button {
+    display: none;
+  }
+
+  /* ...vertikale Seiten-Menü-Leiste */
+  .sidenav-menu {
+    display: none;
+  }
+
+}
+
+/* horizontale Menü-Leiste ausblenden bei kleinen Bildschirmen */
+@media (max-width: 749px){
+  .only-on-big-screen  {
+    display: none;
+  }
+}
+
 
 
 /* 3. Page */
@@ -79,39 +103,6 @@
   align-items: center;
 }
 
-.sidenav-menu {
-  height: 0;
-  overflow: hidden;
-}
-
-.sidenav-menu.open {
-  transition: 1s;
-  height: 200px;
-}
-
-/* SICHTBARKEITS-STEUERUNG */
-
-/*bei grossen Bildschirmen ausblenden: */
-@media (min-width: 640px){
-
-  /* ..."Hamburger"-Button */
-  .sidenav-toggle-button {
-    display: none;
-  }
-
-  /* ...vertikale Seiten-Menü-Leiste */
-  .sidenav-menu {
-    display: none;
-  }
-
-}
-
-/* horizontale Menü-Leiste ausblenden bei kleinen Bildschirmen */
-@media (max-width: 639px){
-  .menu-list {
-    display: none;
-  }
-}
 
 /* footer */
 .footer {

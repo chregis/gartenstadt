@@ -11,19 +11,17 @@
         (click)="toggleSideNav()">
         <mat-icon>menu</mat-icon>
       </button>
-      <mat-nav-list class="menu-list">
-        <app-main-menu class="horizontal"></app-main-menu>
-      </mat-nav-list>
-      <mat-nav-list class="menu-list" *ngIf="(currentUrl$ | async)?.includes('anmeldung')">
-        <app-anmelden-menu class="horizontal"></app-anmelden-menu>
-      </mat-nav-list>
-      <mat-nav-list class="menu-list" *ngIf="(currentUrl$ | async)?.includes('fotos')">
-        <app-foto-album-menu class="horizontal"></app-foto-album-menu>
-      </mat-nav-list>
+
+      <app-main-menu class="only-on-big-screen menu-list horizontal"></app-main-menu>
+
+      <app-anmelden-menu *ngIf="(currentUrl$ | async)?.includes('anmeldung')"
+                           class="only-on-big-screen menu-list horizontal"></app-anmelden-menu>
+
+      <app-foto-album-menu *ngIf="(currentUrl$ | async)?.includes('fotos')"
+                           class="menu-list horizontal"></app-foto-album-menu>
+
       <div class="sidenav-menu" [ngClass]="{ 'open': isSideNavVisible}" >
-        <mat-nav-list>
-          <app-main-menu class="vertical"></app-main-menu>
-        </mat-nav-list>
+        <app-main-menu class="vertical"></app-main-menu>
       </div>
   <!--      <app-menu [menuItems]="mainMenu" class="main-menu-list"></app-menu>-->
     </div>
