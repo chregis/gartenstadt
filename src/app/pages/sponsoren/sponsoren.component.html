@@ -7,9 +7,10 @@
     <span>OK Musikfest Gartenstadt</span>
   </div>
 
+  <hr/>
 
   @if (sponsorenOhneLogo.length > 0 || sponsorenMitLogo.length > 0) {
-    <div>Herzlichen Dank an:</div>
+    <div>Sponsoren vom Musikfest 2023 - herzlichen Dank!</div>
     <ul>
       <li *ngFor="let sponsor of sponsorenOhneLogo">
         <span>{{sponsor.name}}</span>
@@ -22,7 +23,7 @@
         <a [href]="sponsor.page_url" target="gsmf-ext">
           <img alt="Sponsor {{sponsor.name}}"
                [style]="sponsor.img_style"
-               [src]="'assets/img/sponsoren/' + sponsor.logo_url">
+               [src]="'assets/sponsoren/' + sponsor.logo_url">
         </a>
       </div>
     </div>
