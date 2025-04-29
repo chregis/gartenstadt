@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-seite-fuer-anmeldung.component.css']
 })
 export class StartSeiteFuerAnmeldungComponent implements OnInit {
+  deadlineReached: boolean = true;
 
   constructor() { }
 

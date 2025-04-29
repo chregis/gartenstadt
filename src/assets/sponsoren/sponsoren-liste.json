@@ -1,71 +1,90 @@
 {
   "sponsoren": [
-    {
-      "name": "Drogerie Stapfen",
-      "page_url": "http://www.drogisan.ch/",
-      "img_style": ""
-    },
-    {
-      "name": "Fuchs Ursula",
-      "img_style": ""
-    },
-    {
-      "name": "Pizzeria Babylon",
-      "page_url": "https://pizza-babylon.ch/",
-      "img_style": ""
-    },
-    {
-      "name": "Verkehrsgenossenschaft der Gartenstadt-Liebefeld",
-      "page_url": "http://www.gartenstadt-liebefeld.ch/",
-      "img_style": ""
-    },
-    {
-      "name": "VETCETERA Tierarztpraxis",
-      "logo_url": "Logo_Vetcetera.jpg",
-      "page_url": "https://www.vetcetera.ch/",
-      "img_style": ""
-    },
-    {
-      "name": "die Mobiliar",
-      "logo_url": "Logo_Mobiliar.png",
-      "page_url": "https://mobiliar.ch/",
-      "img_style": ""
-    },
-    {
-      "name": "Jakob Käse AG",
-      "logo_url": "Logo_Jakob.jpg",
-      "page_url": "https://www.kaesereibuchegg.ch/",
-      "img_style": ""
-    },
-    {
-      "name": "Biogemüse Maurer",
-      "logo_url": "Logo_Maurer.jpg",
-      "page_url": "https://biomaurer.ch/",
-      "img_style": ""
-    },
-    {
-      "name": "Kuhn und Bieri",
-      "logo_url": "Logo_Kuhnbieri.jpg",
-      "page_url": "https://www.kuhnbieri.ch/de/",
-      "img_style": ""
-    },
-    {
-      "name": "Landi Schwarzwasser",
-      "logo_url": "Logo_Landi.jpg",
-      "page_url": "https://landischwarzwasser.ch/",
-      "img_style": ""
-    },
-    {
-      "name": "Blasercafé",
-      "logo_url": "blasercafe.svg",
-      "page_url": "https://www.blasercafe.ch/",
-      "img_style": ""
-    },
-    {
-      "name": "Evangelisch-reformierte Kirchgemeinde Köniz",
-      "logo_url": "Logo_Kirchgemeinde.jpg",
-      "page_url": "https://www.kg-koeniz.ch/de/meine-kirchgemeinde/kirchenkreise/kirchenkreis-mitte/",
-      "img_style": "max-height: 95px; height: unset; width: 100%"
-    }
-  ]
+      {
+        "years": ["2025"],
+        "name": "Gemeinde Köniz",
+        "logo_url": "Logo_Gemeinde_Koeniz.jpg",
+        "page_url": "https://www.koeniz.ch/",
+        "img_style": ""
+      },
+      {
+        "years": [],
+        "name": "Drogerie Stapfen",
+        "page_url": "http://www.drogisan.ch/",
+        "img_style": ""
+      },
+      {
+        "years": [],
+        "name": "Fuchs Ursula",
+        "img_style": ""
+      },
+      {
+        "years": [],
+        "name": "Pizzeria Babylon",
+        "page_url": "https://pizza-babylon.ch/",
+        "img_style": ""
+      },
+      {
+        "years": ["2025"],
+        "name": "Verkehrsgenossenschaft der Gartenstadt-Liebefeld",
+        "page_url": "http://www.gartenstadt-liebefeld.ch/",
+        "img_style": ""
+      },
+      {
+        "years": [],
+        "name": "VETCETERA Tierarztpraxis",
+        "logo_url": "Logo_Vetcetera.jpg",
+        "page_url": "https://www.vetcetera.ch/",
+        "img_style": ""
+      },
+      {
+        "years": ["2025"],
+        "name": "die Mobiliar",
+        "logo_url": "Logo_Mobiliar.png",
+        "page_url": "https://mobiliar.ch/",
+        "img_style": ""
+      },
+      {
+        "years": ["2025"],
+        "name": "Jakob Käse AG",
+        "logo_url": "Logo_Jakob.jpg",
+        "page_url": "https://www.kaesereibuchegg.ch/",
+        "img_style": ""
+      },
+      {
+        "years": ["2025"],
+        "name": "Biogemüse Maurer",
+        "logo_url": "Logo_Maurer.jpg",
+        "page_url": "https://biomaurer.ch/",
+        "img_style": ""
+      },
+      {
+        "years": [],
+        "name": "Kuhn und Bieri",
+        "logo_url": "Logo_Kuhnbieri.jpg",
+        "page_url": "https://www.kuhnbieri.ch/de/",
+        "img_style": ""
+      },
+      {
+        "years": ["2025"],
+        "name": "Landi Schwarzwasser",
+        "logo_url": "Logo_Landi.jpg",
+        "page_url": "https://landischwarzwasser.ch/",
+        "img_style": ""
+      },
+      {
+        "years": ["2025"],
+        "name": "Blasercafé",
+        "logo_url": "blasercafe.svg",
+        "page_url": "https://www.blasercafe.ch/",
+        "img_style": ""
+      },
+      {
+        "years": ["2025"],
+        "name": "Evangelisch-reformierte Kirchgemeinde Köniz",
+        "logo_url": "Logo_Kirchgemeinde.jpg",
+        "page_url": "https://www.kg-koeniz.ch/de/meine-kirchgemeinde/kirchenkreise/kirchenkreis-mitte/",
+        "img_style": "max-height: 95px; height: unset; width: 100%"
+      }
+    ]
 }

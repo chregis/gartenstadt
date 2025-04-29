@@ -7,18 +7,17 @@
     <span>OK Musikfest Gartenstadt</span>
   </div>
 
-  <hr/>
-
-  @if (sponsorenOhneLogo.length > 0 || sponsorenMitLogo.length > 0) {
-    <div>Sponsoren vom Musikfest 2023 - herzlichen Dank!</div>
+  <div *ngFor="let entity of sponsorMap() | keyvalue: keyDescOrder">
+    <hr/>
+    <div>Sponsoren vom Musikfest {{entity.key}} - herzlichen Dank!</div>
     <ul>
-      <li *ngFor="let sponsor of sponsorenOhneLogo">
+      <li *ngFor="let sponsor of entity.value.sponsorenOhneLogo">
         <span>{{sponsor.name}}</span>
-        <span *ngIf="sponsor.page_url">(<a href="{{sponsor.page_url}}" target="gsmf-ext">Webseite</a>)</span>
+        <span *ngIf="sponsor.page_url"> (<a href="{{sponsor.page_url}}" target="gsmf-ext">Webseite</a>)</span>
       </li>
     </ul>
     <div class="sponsor-logos">
-      <div *ngFor="let sponsor of sponsorenMitLogo"
+      <div *ngFor="let sponsor of entity.value.sponsorenMitLogo"
            class="sponsor-logo">
         <a [href]="sponsor.page_url" target="gsmf-ext">
           <img alt="Sponsor {{sponsor.name}}"
@@ -27,5 +26,5 @@
         </a>
       </div>
     </div>
-  }
+  </div>
 </div>
