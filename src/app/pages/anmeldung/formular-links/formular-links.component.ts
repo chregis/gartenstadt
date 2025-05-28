@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {map} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-formular-links',
@@ -18,4 +19,5 @@ export class FormularLinksComponent {
     map( (fragment: any) =>  fragment ? fragment : '' )
   );
 
+  protected readonly environment = environment;
 }

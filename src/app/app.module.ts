@@ -23,6 +23,10 @@ import { ImpressumComponent } from './pages/datenschutz/impressum/impressum.comp
 import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {DetailsKinderchorComponent} from "./pages/anmeldung/details-kinderchor/details-kinderchor.component";
+import {
+  DetailsGartenstadtchorComponent
+} from "./pages/anmeldung/details-gartenstadtchor/details-gartenstadtchor.component";
 
 @NgModule({ declarations: [
         AppComponent,
@@ -36,17 +40,20 @@ import {MatTooltipModule} from "@angular/material/tooltip";
         DasOkComponent,
         StartSeiteVorAnlassComponent,
         FormularLinksComponent,
+      DetailsGartenstadtchorComponent,
+      DetailsKinderchorComponent,
         StartSeiteNachAnlassComponent,
         FotoAlbumMenuComponent,
         DatenschutzerklaerungComponent,
         ImpressumComponent
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatListModule,
-        MatButtonModule,
-        SharedModule,
-        MatTooltipModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+    bootstrap: [AppComponent],
+  imports: [BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule,
+    SharedModule,
+    MatTooltipModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

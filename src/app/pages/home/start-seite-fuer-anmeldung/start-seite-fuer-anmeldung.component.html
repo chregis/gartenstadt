@@ -1,17 +1,27 @@
-<p>
+<div>
   Am 14. Juni 2025 findet das nächste Musikfest im Quartier statt!
   Die Kreuzung Gartenstadtstrasse / Neuhausweg wird nach den schönen Erfahrungen der vergangenen Musikfeste wiederum zur
   Kulturbühne.
-  <span *ngIf="!deadlineReached">
+  <span *ngIf="!environment.deadlineReached">
     Kinder, Jugendliche und Erwachsene, die gerne etwas vortragen möchten, sind ganz herzlich zum Mitmachen eingeladen:
   </span>
-  <span *ngIf="deadlineReached">
-    Für Auftritte ist die Anmeldefrist abgelaufen. Wir nehmen aber gerne noch Anmeldungen für Hilfe und Kulinarisches entgegen!
+  <span *ngIf="environment.deadlineReached">
+    <br/>Für Auftritte ist die Anmeldefrist abgelaufen.
+    <strong><a routerLink="/anmeldung" fragment="mithilfe">Wir suchen aber noch Helfer*innen!</a></strong><br/>
+    Und auch für Kulinarisches nehmen wir gerne noch Anmeldungen entgegen!
   </span>
+</div>
 <ul>
-  <li *ngIf="!deadlineReached">mitsingen im <a routerLink="/anmeldung" fragment="kinderchor">Kinder-</a> oder <a routerLink="/anmeldung" fragment="gartenstadtchor">Gartenstadtchor</a></li>
-  <li *ngIf="!deadlineReached"><a routerLink="/anmeldung" fragment="darbietung">eigene Darbietung</a></li>
+  <li *ngIf="!environment.deadlineReached">mitsingen im <a routerLink="/anmeldung" fragment="kinderchor">Kinder-</a> oder <a routerLink="/anmeldung" fragment="gartenstadtchor">Gartenstadtchor</a></li>
+  <li *ngIf="!environment.deadlineReached"><a routerLink="/anmeldung" fragment="darbietung">eigene Darbietung</a></li>
   <li><a routerLink="/anmeldung" fragment="mithilfe">mithelfen hinter und vor der Bühne</a></li>
   <li><a routerLink="/anmeldung" fragment="mitbringen">kulinarischer</a> oder <a routerLink="/sponsoren" fragment="sponsor">finanzieller Beitrag</a></li>
 </ul>
-<span *ngIf="!deadlineReached"><strong>Anmeldung bis 5. April!</strong></span>
+<span *ngIf="!environment.deadlineReached"><strong>Anmeldung bis 5. April!</strong></span>
+
+<div>
+  <h2>Infos über die Proben</h2>
+
+  <div app-details-kinderchor [showLink]="false"></div>
+  <div app-details-gartenstadtchor [showLink]="false"></div>
+</div>

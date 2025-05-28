@@ -1,3 +1,7 @@
+<span *ngIf="environment.deadlineReached">
+    Für Auftritte ist die Anmeldefrist abgelaufen. Wir nehmen aber gerne noch Anmeldungen für Hilfe und Kulinarisches entgegen!
+</span>
+
 <div id="mithilfe" [class]="{ 'title-active': (fragment$ | async) === 'mithilfe'}">
 
   <h3>Mithelfen hinter und vor der Bühne</h3>
@@ -34,53 +38,20 @@
   </div>
 </div>
 
-<div id="kinderchor" [class]="{ 'title-active': (fragment$ | async) === 'kinderchor'}">
+<div *ngIf="!environment.deadlineReached"
+     id="kinderchor" [class]="{ 'title-active': (fragment$ | async) === 'kinderchor'}">
 
-  <h3>Kinderchor</h3>
-
-  <div class="paragraph">
-
-    <a target="gsmf-anmeldung" href="https://findmind.ch/c/N7dC-qyLg">Anmeldung</a>
-
-    <ul>
-      <li>Leitung: Christian Schmitt</li>
-      <li>Probedaten:
-        <ul>
-          <li>03. Juni 18.00 -19.00 Unterichtszimmer Thomaskirche</li>
-          <li>04. Juni 13.30 - 14.30 kleiner Saal Thomaskirche</li>
-          <li>10. Juni 18.00 - 19.00  Unterichtszimmer Thomaskirche</li>
-          <li>11. Juni 13.30 - 14.30  kleiner Saal Thomaskirche</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <div app-details-kinderchor></div>
 </div>
 
-<div id="gartenstadtchor" [class]="{ 'title-active': (fragment$ | async) === 'gartenstadtchor'}">
+<div *ngIf="!environment.deadlineReached"
+     id="gartenstadtchor" [class]="{ 'title-active': (fragment$ | async) === 'gartenstadtchor'}">
 
-  <h3>Gartenstadtchor</h3>
-
-  <div class="paragraph">
-
-    <a target="gsmf-anmeldung" href="https://findmind.ch/c/r1Gx-oDAy">Anmeldung</a>
-
-    <ul>
-      <li>Teilnahme: für Erwachsene</li>
-      <li>Leitung: Hansueli Ryser </li>
-      <li>Thema: Mehrstimmige Volkslieder</li>
-      <li>Probedaten: (jeweils 19:30 - 21:30 Uhr)
-        <ul>
-          <li>05. Mai: Aula Buchseeschulhaus</li>
-          <li>12. Mai: Saal Thomaskirche</li>
-          <li>19. Mai: Saal Thomaskirche</li>
-          <li>02. Juni: Saal Thomaskirche</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <div app-details-gartenstadtchor></div>
 </div>
 
-<div id="darbietung" [class]="{ 'title-active': (fragment$ | async) === 'darbietung'}">
+<div *ngIf="!environment.deadlineReached"
+     id="darbietung" [class]="{ 'title-active': (fragment$ | async) === 'darbietung'}">
 
   <h3>eigene Darbietung</h3>
 
