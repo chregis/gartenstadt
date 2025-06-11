@@ -1,7 +1,14 @@
 <div class="main-content-wrapper">
   <div class="main-content">
     <div class="header">
-      <img *ngIf="!(currentUrl$ | async)?.includes('fotos')" src="/assets/Wagen_mit_Text_farbig.png" alt="fahrende Bühne">
+      <img *ngIf="!(currentUrl$ | async)?.includes('fotos')" src="/assets/Wagen_mit_Text_farbig.png" alt="fahrende Bühne"/>
+<!--      <svg style="position: relative; top: -200px; left: 100px; width: 100%"-->
+<!--           xmlns:svg="http://www.w3.org/2000/svg">-->
+<!--        <svg:g transform="translate(100,100) rotate(-20)">-->
+<!--          <svg:rect x="-70" height="22" width="140" fill="#9F2A32" color="#ff0000"></svg:rect>-->
+<!--          <svg:text y="17" text-anchor="middle" fill="#dddddd">14.6.2025</svg:text>-->
+<!--        </svg:g>-->
+<!--      </svg>-->
     </div>
 
     <div class="menu {{ (currentUrl$ | async)?.includes('fotos') ? autoVisibleClass : 'sticky'}}">
