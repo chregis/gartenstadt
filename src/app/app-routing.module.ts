@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'fotos',
-    redirectTo: 'fotos/2023'
+    redirectTo: 'fotos/2025'
   },
   {
     path: 'fotos/:albumId',
